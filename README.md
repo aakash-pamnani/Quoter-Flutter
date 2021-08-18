@@ -1,6 +1,8 @@
-# quoter_flutter
+# Quoter
+A simple Android App which shows a random quote using [Quotable](https://api.quotable.io/random) API.
 
-A new Flutter project.
+Flutter Version of [Quoter](https://github.com/rohfl/Quoter)
+---
 
 ## Getting Started
 
