@@ -28,11 +28,13 @@ class _SplashScreenState extends State<SplashScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image.asset(
-          "/logo.png",
-          height: 100,
-          width: 100,
+          "assets/logo.png",
+          height: Values.getHeight(context)*0.5,
+          width: Values.getWidth(context)*0.5,
         ),
-        Text(Values.appName),
+        Text(Values.appName,
+        style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),
+        ),
       ],
     ));
   }

@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:quoter_flutter/helper/GetQuot.dart';
 import 'package:quoter_flutter/helper/values.dart';
 
-
 class QuoteScreen extends StatefulWidget {
   @override
   _QuoteScreenState createState() => _QuoteScreenState();
@@ -24,11 +23,18 @@ class _QuoteScreenState extends State<QuoteScreen> {
                   children: [
                     InkResponse(
                       onTap: () {
-                        Clipboard.setData(ClipboardData(text: (snapshot.data as Map)["content"] + "/n"+"-"+(snapshot.data as Map)["author"]));
+                        Clipboard.setData(ClipboardData(
+                            text: (snapshot.data as Map)["content"] +
+                                "\n" +
+                                "-" +
+                                (snapshot.data as Map)["author"]));
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          backgroundColor: Colors.grey,
+                            content: Text("Quote copied to clipboard",style: TextStyle(color: Colors.white),)));
                       },
                       child: ConstrainedBox(
                         constraints: BoxConstraints(
-                            maxWidth: Values.getWidth(context)*0.5),
+                            maxWidth: Values.getWidth(context) * 0.8),
                         child: Card(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
